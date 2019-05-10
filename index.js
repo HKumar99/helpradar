@@ -71,7 +71,7 @@ app.get('/get/:id/addTask', function(req, res) {
 });
 
 // Renders a list of all helpers for a task of an emergency
-app.get('/:id/:taskid', function(req, res) {
+app.get('/get/:id/:taskid', function(req, res) {
     Emergency.findOne({_id: req.params.id}, function(err, emerge) {
         if (err) throw err;
         for (var i = 0; i < emerge.tasks.length; i++) {
@@ -198,7 +198,7 @@ app.get('/about', function(req, res) {
     res.render('about', {});
 });
 
-app.listen(process.env.PORT || 3000, function() {
+http.listen(process.env.PORT || 3000, function() {
     console.log('Listening!');
 });
 
