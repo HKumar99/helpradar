@@ -21,7 +21,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 console.log(process.env.MONGODB);
-mongoose.connect(process.env.MONGODB);
+mongoose.connect("mongodb://hkumar:hkumar@hkcmsc389k-shard-00-00-lxkg7.mongodb.net:27017,hkcmsc389k-shard-00-01-lxkg7.mongodb.net:27017,hkcmsc389k-shard-00-02-lxkg7.mongodb.net:27017/test?ssl=true&replicaSet=hkcmsc389k-shard-0&authSource=admin&retryWrites=true");
 mongoose.connection.on('error', function() {
     console.log('MongoDB Connection Error!');
     process.exit(1);
@@ -148,7 +148,7 @@ app.post('/create/:id/:taskid/person', function(req, res) {
         }
         emerge.save(function(err) {
             if (err) throw err;
-            res.redirect('/' + req.params.id + '/' + req.params.taskid);
+            res.redirect('/get/' + req.params.id + '/' + req.params.taskid);
         });
     });
 });
