@@ -1,0 +1,24 @@
+<br>
+<br>
+<article>
+    <form id="addEmergency">
+        <div class="input-field">
+            <input id="emergeTitle" class="validate" type="text" name="title" size="50" placeholder="Emergency">
+            <label class="active" for="emergeTitle">Title</label>
+        </div>
+        <div class="input-field">
+            <input id="emergeDesc" class="validate" type="text" name="description" size="50" placeholder="Describe with words, urls, etc.">
+            <label class="active" for="emergeDisc">Title</label>
+        </div>
+        <button class="waves-effect waves-light amber darken-4 btn" type="submit">Create Emergency</button>
+    </form>
+    <br>
+    <button class="waves-effect waves-light deep-orange accent-4 btn" onclick="location.href = '/';">Cancel</button>
+</article>
+<br>
+<h3>Ongoing Emergencies:</h3>
+<ul id="emergeList">
+{{#each data}}
+<li>{{this.title}}</li>
+{{/each}}
+</ul>

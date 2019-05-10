@@ -1,0 +1,37 @@
+<br>
+<article>
+    <form method="POST" action="/create/{{id}}/task">
+        <div class="input-field">
+            <input id="taskTitle" type="text" name="title" size="50">
+            <label class="active" for="taskTitle">Title</label>
+        </div>
+        <div class="input-field">
+            <input id="taskDesc" type="text" name="description" size="50">
+            <label class="active" for="taskDesc">Description</label>
+        </div>
+        <p>Choose a Priority: </p>
+        <div class="input-field">
+            <p>
+                <label>
+                    <input name="priority" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="priority" type="radio" value="2"/>
+                    <span>2</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="priority" type="radio" value="3" />
+                    <span>3</span>
+            </label>
+            </p>
+        </div>
+        <button class="waves-effect waves-light amber darken-4 btn" type="submit">Create Task</button>
+    </form>
+    <br>
+    <button class="waves-effect waves-light deep-orange accent-4 btn" onclick="location.href = '/get/{{id}}';">Cancel</button>
+</article>

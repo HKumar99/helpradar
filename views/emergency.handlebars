@@ -1,0 +1,27 @@
+<br>
+<h4 style="color: black; text-align:center; background-color:darkkhaki">{{etitle}}</h4>
+<button class="waves-effect waves-light amber darken-4 btn" onclick="location.href = '/';">Back to Emergencies</button>
+<button class="waves-effect waves-light amber darken-4 btn" onclick="location.href = '{{eid}}/addTask';">Add a Task</button>
+<br>
+<br>
+{{#each data}}
+    <article>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card red lighten-3 grow">
+                    <div class="card-content white-text">
+                        <span class="card-title"><a style="color:darkslategrey; font-weight: bold" href="/{{../eid}}/{{this._id}}">{{this.title}}</a></span>
+                        <p style="color: green; font-weight: bold">Priority: {{this.priority}}</p>
+                        <p style="color: green">{{this.description}}</p>
+                        </div>
+                <div class="card-action">
+                    <p>Created: {{this.time}}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </article>
+{{else}}
+    <br>
+    <p style="text-align: center">No tasks at the time. Stay tuned</p>
+{{/each}}

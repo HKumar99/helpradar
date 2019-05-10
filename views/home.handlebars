@@ -1,0 +1,30 @@
+
+<br>
+<br>
+<button class="waves-effect waves-light amber darken-4 btn" onclick="location.href = '/addEmergency';">Add an Emergency</button>
+<button class="right-align waves-effect waves-light teal lighten-2 btn" onclick="location.href = '/recentemergencies';">Most Recent Emergencies</button>
+<button class="right-align waves-effect waves-light teal lighten-2 btn" onclick="location.href = '/';">Oldest Emergencies</button>
+<button class="right-align waves-effect waves-light purple darken-4 btn" onclick="location.href = '/about';">About the Project</button>
+<br>
+<br>
+{{#each data}}
+    <article>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card deep-orange lighten-2 grow">
+                    <div class="card-content white-text">
+                        <span class="card-title"><a style="color:darkslategrey; font-weight: bold" href="/get/{{this._id}}">{{this.title}}</a></span>
+                        <p style="color: green">{{this.description}}</p>
+                        </div>
+                <div class="card-action">
+                    <p>{{this.time}}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+    </article>
+{{else}}
+    <p>No emergencies at the moment</p>
+{{/each}}
+

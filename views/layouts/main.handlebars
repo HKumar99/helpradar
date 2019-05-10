@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CMSC389K Final Project</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body style="background-color: aqua">
+    <h1 class="grow" style="text-align: center">HelpRadar</h1>
+    <h3 style="text-align: center">Connecting <span id="typer"></span>People During Dire Times</h3>
+    <div style="margin: 20px">
+      {{{body}}}
+    </div>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  $('#addEmergency').submit(function(){
+    var title = $('#emergeTitle').val();
+    var desc = $('#emergeDesc').val();
+    $('#emergeTitle').val('');
+    $('#emergeDesc').val('')
+    $.ajax({
+      type: "POST",
+      url: '/emergency',
+      data: {
+        title: title,
+        description: desc
+      },
+      success: function(data, status){
+        console.log("IO EMIT");
+      }
+    });
+    return false;
+  });
+
+  socket.on('New Emergency', function(m) {
+    $('#emergeList').append($('<li>').text("EMERGENCY! " + m.title + " is happening!"));
+  });
+
+</script>
+
+</html>

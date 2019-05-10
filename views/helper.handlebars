@@ -1,0 +1,20 @@
+<br>
+<article>
+    <form method="POST" action="/create/{{eid}}/{{taskid}}/person">
+        <div class="input-field">
+            <input id="helperName" type="text" name="name" size="50" placeholder="Name">
+            <label class="active" for="helperName">Name of Helper:</label>
+        </div>
+        <div class="input-field">
+            <input id="helperPhone" type="text" name="phone" size="50" placeholder="Phone number">
+            <label class="active" for="helperPhone">Phone:</label>
+        </div>
+        <div class="input-field">
+            <input id="helperEmail" type="email" name="email" size="50" placeholder="Email">
+            <label class="active" for="helperEmail">Email:</label>
+        </div>
+        <button class="waves-effect waves-light amber darken-4 btn" type="submit">Join the Task</button>
+    </form>
+    <br>
+    <button class="waves-effect waves-light deep-orange accent-4 btn" onclick="location.href = '/{{eid}}/{{taskid}}';">Cancel</button>
+</article>

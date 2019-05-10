@@ -1,0 +1,26 @@
+<br>
+<br>
+<h4 style="color:black; text-align:center; background-color:darkkhaki">{{etitle}}</h4>
+<button class="waves-effect waves-light amber darken-4 btn" onclick="location.href = '/';">Back to Emergencies</button>
+<button class="waves-effect waves-light amber darken-4 btn" onclick="location.href = '/get/{{eid}}'">Back to Tasks</button>
+<button class="waves-effect waves-light pink darken-1 btn" onclick="location.href = '/{{eid}}/{{taskid}}/addHelper';">Add a Person</button>
+<br>
+<br>
+{{#each data}}
+    <article>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card pink lighten-3 grow">
+                    <div class="card-content white-text">
+                        <span style="color:darkslategrey; font-weight: bold" class="card-title">{{this.name}}</span>
+                        <p style="color: green; font-weight: bold">Ph: {{this.phone}}</p>
+                        <p style="color: green">{{this.email}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <br>
+{{else}}
+    <p>No helpers at the time. Volunteer to help!</p>
+{{/each}}
